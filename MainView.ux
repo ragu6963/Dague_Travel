@@ -1,0 +1,102 @@
+<App> 
+	<JavaScript File="MainView.js" />
+	<Font File="Assets/BMEULJIROTTF.ttf" ux:Global="BE" />
+	<Font File="Assets/GmarketSansTTFMedium.ttf" ux:Global="GM" />
+	<Font File="Assets/GmarketSansTTFBold.ttf" ux:Global="GMB" />
+	<PageControl ActiveIndex="1">
+		<!-- Food Page -->
+		<Page>
+			<Page>
+				<DockPanel Alignment="Default" Margin="0, 0, 0, 0">
+					<!-- 상단 패널 -->
+					<ScrollView AllowedScrollDirections="Horizontal" Dock="Top" Alignment="Default" Margin="0, 0, 0, 0">
+						<StackPanel Orientation="Horizontal" ItemSpacing="0" Alignment="Center">
+							<Each Items="{food_image}">
+								<Image File="{img}" Width="80" Height="80" StretchMode="Scale9" Alignment="Bottom" Margin="10, 10, 10, 10" Clicked="{food_click}" Opacity="0.8">
+									<Shadow Angle="145" Distance="5" />
+								</Image>
+							</Each>
+						</StackPanel>
+					</ScrollView>
+					<!-- 경계선 -->
+					<Rectangle Width="100%" Color="#FFDDA7" Alignment="Default" Margin="0, 0, 0, 0" Dock="Top" Height="4" />
+					<!-- 하단 패널 -->
+					<Panel Opacity="1" Alignment="Default" Dock="Fill">
+						<ScrollView Alignment="Default" Margin="0, 0, 0, 0" Padding="0, 0, 0, 0">
+							<food_panel Padding="20, 20, 20, 0" />
+						</ScrollView>
+					</Panel>
+				</DockPanel>
+			</Page>
+		</Page>
+		<!-- Main Page -->
+		<Page>
+			<StackPanel Alignment="Center">
+					
+					<Text Font="GMB" TextAlignment="Center" Value="대구는" FontSize="100" Color="#E45560" Margin="0, 0, 0, 20">
+						<DropShadow Size="3" Angle="90" Distance="3" Color="Black" />
+					</Text>
+					<StackPanel Orientation="Horizontal" Alignment="Center" ItemSpacing="50">
+						<Text Font="GMB" TextAlignment="Center" Value="◀ 맛있다" Color="#FFDDA7" FontSize="30">
+							
+						</Text>
+						<Text Font="GMB" TextAlignment="Center" Value="예쁘다 ▶" Color="#73D0A3" FontSize="30">
+							
+						</Text>
+					</StackPanel>
+			</StackPanel>
+		</Page>
+
+		<!-- Location Page -->
+		<Page>
+			<DockPanel Alignment="Default" Margin="0, 0, 0, 0">
+				<!-- 상단 패널 -->
+				<ScrollView AllowedScrollDirections="Horizontal" Dock="Top" Alignment="Default" Margin="0, 0, 0, 0">
+					<StackPanel Orientation="Horizontal" ItemSpacing="0" Alignment="Center">
+						<Each Items="{loca_image}">
+							<Image File="{img}" Width="80" Height="80" StretchMode="Scale9" Alignment="Bottom" Margin="10, 10, 10, 10" Clicked="{location_click}" Opacity="0.8">
+								<Shadow Angle="45" Distance="5" />
+							</Image>
+						</Each>
+					</StackPanel>
+				</ScrollView>
+
+				<!-- 경계선 -->
+				<Rectangle Width="100%" Color="#73D0A3" Alignment="Default" Margin="0, 0, 0, 0" Dock="Top" Height="3" />
+
+				<!-- 하단 패널 -->
+				<Panel Opacity="1" Alignment="Default" Dock="Fill">
+					<ScrollView Alignment="Default" Margin="0, 0, 0, 0" Padding="0, 0, 0, 0">
+						<loca_panel Padding="20, 20, 20, 0" />
+					</ScrollView>
+				</Panel>
+			</DockPanel>
+		</Page>
+	</PageControl>
+
+	<!-- food class -->
+	<StackPanel Width="100%" ux:Class="food_panel">
+		<Image File="{food_img}" Height="15%" StretchMode="Fill" Layer="Layout" Margin="0, 0, 0, 10" MaxHeight="15%" MinHeight="15%" /> 
+		<Text Value="{food_name}" TextAlignment="Left" Font="GMB" FontSize="30" Margin="0, 0, 0, 10" TextColor="#E45560">
+		</Text>
+		<Text Value="{food_info}" TextColor="Black" TextAlignment="Center" Alignment="CenterLeft" FontSize="12" TextWrapping="Wrap" Font="GM" LineSpacing="3" Opacity="0.8" />
+		<Text Font="GM" TextAlignment="Center" FontSize="50" Color="#FFDDA7" Margin="0, 10, 0, 30" Clicked="{food_mark}">
+			<DropShadow Size="3" Angle="145" Distance="3" Color="Black" />
+			❓
+		</Text>
+	</StackPanel>
+
+	<!-- location class -->
+	<StackPanel Width="100%" ux:Class="loca_panel">
+		<Image File="{loca_img}" Height="15%" StretchMode="Fill" Layer="Layout" Margin="0, 0, 0, 15" MaxHeight="15%" MinHeight="15%" Padding="0, 0, 0, 0" Opacity="1">
+			<Shadow Angle="130" Distance="10" />
+		</Image>
+		<Text Value="{loca_name}" TextAlignment="Left" Font="GMB" FontSize="30" Margin="0, 0, 0, 10" TextColor="#E45560">
+		</Text>
+		<Text Value="{loca_info}" TextColor="Black" TextAlignment="Center" Alignment="CenterLeft" FontSize="12" TextWrapping="Wrap" Font="GM" LineSpacing="3" Opacity="0.8" />
+		<Text Font="GM" TextAlignment="Center" FontSize="50" Color="#73D0A3" Margin="0, 10, 0, 30" Clicked="{loca_mark}">
+			<DropShadow Size="3" Angle="145" Distance="3" Color="Black" />
+			❓
+		</Text>
+	</StackPanel> 
+</App>
