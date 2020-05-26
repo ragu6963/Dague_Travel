@@ -1,30 +1,30 @@
 
 var loca_image = [
-{ id: 1, img: "Assets/location/place1.jpg" },
-{ id: 2, img: "Assets/location/place2.jpg" },
-{ id: 3, img: "Assets/location/place3.jpg" },
-{ id: 4, img: "Assets/location/place4.jpg" },
-{ id: 5, img: "Assets/location/place5.jpg" },
-{ id: 6, img: "Assets/location/place6.jpg" },
-{ id: 7, img: "Assets/location/place7.jpg" },
-{ id: 8, img: "Assets/location/place8.jpg" },
-{ id: 9, img: "Assets/location/place9.jpg" },
-{ id: 10, img: "Assets/location/place10.jpg" },
-{ id: 11, img: "Assets/location/place11.jpg" },
-{ id: 12, img: "Assets/location/place12.jpg" }
+	{ id: 1, img: "Assets/location/place1.jpg" },
+	{ id: 2, img: "Assets/location/place2.jpg" },
+	{ id: 3, img: "Assets/location/place3.jpg" },
+	{ id: 4, img: "Assets/location/place4.jpg" },
+	{ id: 5, img: "Assets/location/place5.jpg" },
+	{ id: 6, img: "Assets/location/place6.jpg" },
+	{ id: 7, img: "Assets/location/place7.jpg" },
+	{ id: 8, img: "Assets/location/place8.jpg" },
+	{ id: 9, img: "Assets/location/place9.jpg" },
+	{ id: 10, img: "Assets/location/place10.jpg" },
+	{ id: 11, img: "Assets/location/place11.jpg" },
+	{ id: 12, img: "Assets/location/place12.jpg" }
 ];
 
 var food_image = [
-{ id: 1, img: "Assets/food/food1.jpg" },
-{ id: 2, img: "Assets/food/food2.jpg" },
-{ id: 3, img: "Assets/food/food3.jpg" },
-{ id: 4, img: "Assets/food/food4.jpg" },
-{ id: 5, img: "Assets/food/food5.jpg" },
-{ id: 6, img: "Assets/food/food6.jpg" },
-{ id: 7, img: "Assets/food/food7.jpg" },
-{ id: 8, img: "Assets/food/food8.jpg" },
-{ id: 9, img: "Assets/food/food9.jpg" },
-{ id: 10, img: "Assets/food/food10.jpg" } 
+	{ id: 1, img: "Assets/food/food1.jpg" },
+	{ id: 2, img: "Assets/food/food2.jpg" },
+	{ id: 3, img: "Assets/food/food3.jpg" },
+	{ id: 4, img: "Assets/food/food4.jpg" },
+	{ id: 5, img: "Assets/food/food5.jpg" },
+	{ id: 6, img: "Assets/food/food6.jpg" },
+	{ id: 7, img: "Assets/food/food7.jpg" },
+	{ id: 8, img: "Assets/food/food8.jpg" },
+	{ id: 9, img: "Assets/food/food9.jpg" },
+	{ id: 10, img: "Assets/food/food10.jpg" }
 ];
 
 var location = {
@@ -169,33 +169,32 @@ function location_click(e) {
 	loca_name.value = location[loca_id.value].name;
 	loca_info.value = location[loca_id.value].info;
 	loca_img.value = location[loca_id.value].img;
-	InterApp.launchUri("https://naver.com");
 };
-function food_click(e) { 
+function food_click(e) {
 	food_id.value = e.data.id;
 	food_name.value = food[food_id.value].name;
 	food_info.value = food[food_id.value].info;
 	food_img.value = food[food_id.value].img;
 };
-function food_mark(){
+function food_mark() {
 	console.log("https://tour.daegu.go.kr/kor/contents.do?IDX=54&seIDX=27&grIDX=6");
 	InterApp.launchUri("https://tour.daegu.go.kr/kor/contents.do?IDX=54&seIDX=27&grIDX=6");
 };
-function loca_mark(){
+function loca_mark() {
 	console.log("https://tour.daegu.go.kr/kor/contents.do?IDX=19&seIDX=19&grIDX=4");
 	InterApp.launchUri("https://tour.daegu.go.kr/kor/contents.do?IDX=19&seIDX=19&grIDX=4");
 };
-module.exports = { 
-	loca_id : loca_id,
+module.exports = {
+	loca_id: loca_id,
 	loca_name: loca_name,
 	loca_info: loca_info,
 	loca_img: loca_img,
 	loca_image: loca_image,
-	food_id : food_id,
+	food_id: food_id,
 	food_name: food_name,
 	food_info: food_info,
 	food_img: food_img,
-	food_image:food_image,
+	food_image: food_image,
 	location_click,
 	food_click,
 	food_mark,
